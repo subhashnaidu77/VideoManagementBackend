@@ -18,7 +18,13 @@ const connect  =()=>{
     })
 
 }
-app.use(cors())
+const corsOptions = {
+    origin: 'https://frontend-ttvu.onrender.com', // Update to your actual frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use(express.json())
 app.use("/api/users",userRoutes);
