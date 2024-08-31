@@ -18,6 +18,7 @@ const connect  =()=>{
     })
 
 }
+const port = process.env.PORT || 8800;
 const corsOptions = {
     origin: 'https://frontend-ttvu.onrender.com', // Update to your actual frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -42,7 +43,7 @@ app.use((err, req, res, next) => {
     });
   });
 
-app.listen(8800, () => {
+app.listen(port, () => {
     connect()
     console.log("Connected to Server yes");
   });
