@@ -19,12 +19,7 @@ const connect  =()=>{
 
 }
 const port = process.env.PORT || 8800;
-const corsOptions = {
-    origin: 'https://frontend-ttvu.onrender.com', // Replace with your actual frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true, // If your frontend sends cookies, set this to true
-};
+
 
 app.use(cors(corsOptions))
 app.use(cookieParser())
