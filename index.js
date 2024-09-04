@@ -21,7 +21,7 @@ const connect  =()=>{
 const port = process.env.PORT || 8800;
 
 
-app.use(cors())
+app.use(cors({ origin: https://frontend-5duj.onrender.com , methods: "GET,POST,PUT,DELETE", credentials: true }))
 app.use(cookieParser())
 app.use(express.json())
 app.use("/api/users",userRoutes);
