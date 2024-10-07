@@ -85,7 +85,16 @@ export  const like =async (req,res,next)=>{
         $addToSet:{likes:id},
         $pull:{dislikes:id}
       })
-      res.status(200).json("The video has been liked.")
+        
+      res
+         .cookie('access_token', '1234', {
+ 
+  secure:  req.headers['x-forwarded-proto'] === 'https', // Detect HTTPS behind proxy
+
+})
+          .status(200).json("The video has been liked.")
+        
+        
     } catch (err) {
       next(err);
     }
