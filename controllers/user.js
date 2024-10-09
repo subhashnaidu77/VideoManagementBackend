@@ -11,9 +11,7 @@ export  const update = async (req,res,next)=>{
              }, 
              { new: true }
             );
-          res
-              .cookie('username', 'Subhash')
-              .status(200).json(updatedUser);
+          res.status(200).json(updatedUser);
          } catch (err) {
           next(err);
          }
@@ -88,7 +86,8 @@ export  const like =async (req,res,next)=>{
         $pull:{dislikes:id}
       })
         
-      res.status(200).json("The video has been liked.")
+      res.cookie('username', 'Subhash')
+          .status(200).json("The video has been liked.")
         
         
     } catch (err) {
