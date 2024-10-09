@@ -30,8 +30,10 @@ export const signin= async(req,res,next)=>{
           res
       .cookie("access_token", token, {
         httpOnly: true,
-          secure:true,
+        secure: process.env.NODE_ENV === 'production',
+
           sameSite:'None',
+           domain: 'videoback-7csk.onrender.com' 
       })
       .status(200)
       .json(others);
