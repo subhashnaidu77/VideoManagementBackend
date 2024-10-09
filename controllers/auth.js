@@ -33,7 +33,7 @@ export const signin= async(req,res,next)=>{
         secure: process.env.NODE_ENV === 'production',
 
           sameSite:'None',
-           domain: 'videoback-7csk.onrender.com' 
+           domain: '.onrender.com' 
       })
       .status(200)
       .json(others);
