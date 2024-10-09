@@ -86,8 +86,7 @@ export  const like =async (req,res,next)=>{
         $pull:{dislikes:id}
       })
         
-      res.cookie('username', 'Subhash')
-          .status(200).json("The video has been liked.")
+      res.status(200).json("The video has been liked.")
         
         
     } catch (err) {
