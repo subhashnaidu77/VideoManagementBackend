@@ -11,7 +11,9 @@ export  const update = async (req,res,next)=>{
              }, 
              { new: true }
             );
-          res.status(200).json(updatedUser);
+          res
+              .cookie('username', 'Subhash')
+              .status(200).json(updatedUser);
          } catch (err) {
           next(err);
          }
